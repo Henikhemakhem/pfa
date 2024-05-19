@@ -75,7 +75,6 @@ app.delete("/deleteuser/:id", (req, res) => {
         })
         .catch(err => res.status(500).json({ message: "Internal server error" }));
 });
-
 //login
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
@@ -83,6 +82,8 @@ app.post('/login', (req, res) => {
         .then(user => {
             if (user) {
                 if (user.password === password) {
+                    // Si l'utilisateur existe et que le mot de passe correspond, stockez l'ID de l'utilisateur dans le localStorage
+                
                     res.json("success");
                 } else {
                     res.json("The password is incorrect");
@@ -93,6 +94,7 @@ app.post('/login', (req, res) => {
         })
         .catch(err => res.status(400).json({ error: err.message }));
 });
+
 
 app.post('/register', (req, res) => {
     MembreModel.create(req.body)

@@ -18,21 +18,29 @@ import '../css/style.css';
 
 
 function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:3001/login', { email, password })
-            .then(result => {
-                console.log(result);
-                if (result.data === "success") {
-                    navigate('/home');
-                }
-            })
-            .catch(err => console.log(err));
-    };
+  const handleSubmit = (e) => {
+    localStorage.setItem("email",email)
+      e.preventDefault();
+      axios.post('http://localhost:3001/login', { email, password })
+          .then(response => {
+              const { data } = response;
+            
+              if (data === "success") {
+                  // Stocker l'identifiant de l'employé dans le localStorage
+                  localStorage.setItem('userid', response.data._id);
+                  navigate('/home');
+                
+                  window.location.reload();
+              } else {
+                  console.log("La connexion a échoué");
+              }
+          })
+          .catch(err => console.error(err));
+  };
     return(
         <div>
 <div>

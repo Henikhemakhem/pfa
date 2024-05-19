@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import '../css/animate.min.css'; 
 import '../css/bootstrap-select.min.css'; 
@@ -18,30 +16,19 @@ function Header() {
       <nav className="mx-auto site-navigation">
         <ul className="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
           <li><a href="/" className="nav-link">Home</a></li>
-          <li><a href="/profil/id">mon profil</a></li>
-          <li className="has-children">
-            <a href="job-listings.html">Job Listings</a>
-            <ul className="dropdown">
-              <li><a href="job-single.html">Job Single</a></li>
-              <li><a href="post-job.html">Post a Job</a></li>
-            </ul>
-          </li>
+          <li><a href="/profil/id">Profil</a></li>
+        
           <li className="has-children">
             <a href="services.html">Pages</a>
             <ul className="dropdown">
-              <li><a href="/createUser">ajouter cv</a></li>
-              <li><a href="service-single.html">Service Single</a></li>
-              <li><a href="blog-single.html">Blog Single</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="portfolio-single.html">Portfolio Single</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="faq.html">Frequently Ask Questions</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
+  
+              <li><a href="/score">Get your Score</a></li>
+              
               </ul>
            
           </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contact</a></li>
           <li className="d-lg-none"><a href="post-job.html"><span className="mr-2">+</span> Post a Job</a></li>
           <li className="d-lg-none"><a href="/login">Log In</a></li>
           </ul>

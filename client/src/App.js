@@ -11,8 +11,11 @@ import Login from './pages/login';
 import Header from './components/header';
 import Footer from './components/footer';
 import Signup from './pages/signup';
-
-
+import UploadCV from './crud/UploadCV';
+import DisplayCVInfo from './crud/DisplayCVInfo';
+import RelevantQuestions from './crud/RelevantQuestions';
+import Score from './crud/score';
+import Chart from './crud/chart';
 function App() {
   return (
     <div className="App">
@@ -30,9 +33,11 @@ function App() {
           <Route path='/Dashboard' exact element={<Dashboard/>}/>
           <Route path='/Test' exact element={<Test />}/>
           <Route path='/User' exact element={<User/>}/>
-
-          
-         
+          <Route path='/cv' exact element={<UploadCV/>}/>
+          <Route path='/questions' exact element={<RelevantQuestions/>}/>
+          <Route path='/c' exact element={<DisplayCVInfo/>}/>
+          <Route path='/score' exact element={<Score/>}/>
+          <Route path='/chart' exact element={<Chart/>}/>
         </Routes>
       </BrowserRouter>
       <Footer></Footer>

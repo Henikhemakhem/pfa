@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
  // Importez votre propre fichier CSS principal ici
 import '../css/custom-bs.css';
 import '../css/jquery.fancybox.min.css';
@@ -15,6 +15,10 @@ import '../css/quill.snow.css';
 import '../css/style.css'; 
 
 function Home() {
+  useEffect(() => {
+    const userId = localStorage.getItem('email');
+    console.log("User email:", userId); // Assurez-vous que l'ID utilisateur est récupéré correctement
+  }, []);
   return (
     <div>
      <div>
